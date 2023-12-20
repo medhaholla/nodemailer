@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "nodemailer",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
