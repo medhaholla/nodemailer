@@ -1,11 +1,12 @@
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 const Mailgen = require("mailgen");
+// const SMTPTransport = require("nodemailer/lib/smtp-transport");
 
 const email = process.env.EMAIL;
 const password = process.env.PASSWORD;
 
-const sendEmail = (req, res) => {
+const sendEmail = async (req, res) => {
   const { userEmail } = req.body;
 
   let config = {
@@ -15,7 +16,6 @@ const sendEmail = (req, res) => {
       pass: password,
     },
   };
-
   let transporter = nodemailer.createTransport(config);
 
   let MailGenerator = new Mailgen({
