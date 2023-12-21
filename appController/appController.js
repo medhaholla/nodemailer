@@ -46,9 +46,25 @@ const sendEmail = (req, res) => {
     },
   };
 
-  let email = MailGenerator.generate(response);
+  let mail = MailGenerator.generate(response);
 
-  res.status(201).json("GetEmail sucessful");
+  let message = {
+    from: email,
+    to: userEmail,
+    subject: "Place Order",
+    html: mail,
+  };
+
+  transporter
+    .sendMail(message)
+    .then(() => {
+      return res.status(201).json({
+        msg: "You should recieve an email",
+      });
+    })
+    .catch((error) => {
+      return res.status(500).json({ error });
+    });
 };
 
 module.exports = {
