@@ -22,7 +22,7 @@ const sendEmail = async (req, res) => {
     theme: "default",
     product: {
       // Appears in header & footer of e-mails
-      name: "Mailgen",
+      name: "Welcome",
       link: "https://mailgen.js/",
       // Optional product logo
       // logo: 'https://mailgen.js/img/logo.png'
@@ -31,18 +31,8 @@ const sendEmail = async (req, res) => {
 
   let response = {
     body: {
-      name: "Daily t",
-      intro: "Your bill has arrived",
-      table: {
-        data: [
-          {
-            item: "NodeMailer stack book",
-            description: "A Backend application",
-            price: "$10",
-          },
-        ],
-      },
-      outro: "Looking forward to do more buisness",
+      name: "Hi there",
+      intro: "This is test mail",
     },
   };
 
